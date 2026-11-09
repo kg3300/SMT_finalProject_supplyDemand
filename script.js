@@ -6,6 +6,10 @@ const policyMetrics = [
   { id: 'affordable', label: 'Affordable units', min: 0, max: 50, step: 1, value: 20, unit: '%' },
   { id: 'density', label: 'Density bonus', min: 0, max: 100, step: 5, value: 25, unit: '%' },
   { id: 'subsidy', label: 'Housing subsidy', min: 0, max: 50, step: 1, value: 10, unit: '%' },
+  { id: 'height', label: 'Height limit', min: 3, max: 30, step: 1, value: 18, unit: ' floors' },
+  { id: 'coverage', label: 'Lot coverage', min: 25, max: 90, step: 5, value: 50, unit: '%' },
+  { id: 'lots', label: 'Lot merging', min: 1, max: 5, step: 1, value: 2, unit: ' lots' },
+  { id: 'far', label: 'Maximum FAR', min: 1, max: 15, step: 0.5, value: 4, unit: '×' },
 ];
 const $ = id => document.getElementById(id);
 const timeline = $('timeline');
@@ -188,7 +192,7 @@ function demoModel(year) {
 function render() {
   policyMetrics.forEach(policy => {
     $(`${policy.id}-value`).textContent = `${state.values[policy.id]}${policy.unit}`;
-    $(policy.id).setAttribute('aria-valuetext', `${state.values[policy.id]} percent`);
+    $(policy.id).setAttribute('aria-valuetext', `${state.values[policy.id]}${policy.unit}`);
   });
   const result = demoModel(state.year);
   timeline.value = state.year;

@@ -7,11 +7,14 @@
   <title>Democratizing Policy Simulations</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="geometry.css">
+  <script src="geometry-model.js" defer></script>
+  <script src="geometry-view.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
   <main class="simulation-layout">
-    <details class="tool-panel">
+    <details class="tool-panel" open>
       <summary class="pill-header">SIMULATION TOOL <span class="chevron" aria-hidden="true"></span></summary>
       <div class="tool-content">
         <section class="manual">
@@ -26,7 +29,7 @@
         <section class="policies"><div class="section-heading"><h2>POLICIES</h2><button id="reset" class="reset" aria-label="Reset simulation">↺</button></div><div id="policy-grid" class="policy-grid" data-policy-zone="bank"></div><p class="policy-help">Drag ↗ to move · click ↗ to add / remove</p><p id="policy-status" class="sr-only" role="status" aria-live="polite"></p></section>
       </div>
     </details>
-    <section class="simulation-space" aria-label="Reserved for the Rhino and Grasshopper model"><div id="model-mount"></div></section>
+    <section class="simulation-space" aria-label="Fictional neighborhood geometry"><div id="model-mount"></div></section>
     <aside class="right-column">
       <details class="credits-panel"><summary class="pill-header">DATA SOURCE &amp; CREDITS <span class="chevron" aria-hidden="true"></span></summary>
         <div class="credits-content"><p>Democratizing Policy Simulations</p><p>A collaborative SMT project exploring developers, tenants, and policy in real estate development.</p><p>Interface prototype: all displayed results use synthetic demonstration calculations. No observed dataset or Rhino/Grasshopper model is connected yet.</p><a href="https://github.com/essentiallee/SMT_finalProject_supplyDemand/tree/Branch_Jae" target="_blank" rel="noopener noreferrer">Project source / Branch_Jae ↗</a></div>
